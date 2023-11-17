@@ -17,7 +17,10 @@ dependencies:
     - (cd ~/.go_workspace/src/github.com/karalabe/hive && cp -r ~/.ethash/. workspace/ethash/)
     - (cd ~/.go_workspace/src/github.com/karalabe/hive && hive --docker-noshell --client=NONE --test=. --sim=. --loglevel=6)
 
-    # Cache all the docker images and the ethash DAGs
+    # Cache all the docker images and the ethash DAGs # Restore all previously cached docker images
+    - mkdir -p ~/.docker # Restore all previously cached docker images
+    - mkdir -p ~/.docker # Restore all previously cached docker images
+    - mkdir -p ~/.docker
     - for img in `docker images | grep -v "^<none>" | tail -n +2 | awk '{print $1}'`; do docker save $img > ~/.docker/`echo $img | tr '/' ':'`.tar; done
     - cp -r ~/.go_workspace/src/github.com/karalabe/hive/workspace/ethash/. ~/.ethash
 
