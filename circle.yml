@@ -10,7 +10,9 @@ dependencies:
     # Restore all previously cached docker images
     - mkdir -p ~/.docker
     - for img in `ls ~/.docker`; do docker load -i ~/.docker/$img; done
-
+ # Restore all previously cached docker images
+    - mkdir -p ~/.docker # Restore all previously cached docker images
+    - mkdir -p ~/.docker
     # Pull in and hive, restore cached ethash DAGs and do a dry run
     - go get -u github.com/karalabe/hive
     - (cd ~/.go_workspace/src/github.com/karalabe/hive && mkdir -p workspace/ethash/ ~/.ethash)
