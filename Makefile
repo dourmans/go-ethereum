@@ -7,7 +7,13 @@
 GOBIN = ./build/bin
 GO ?= latest
 GORUN = go run
-
+$(GORUN) build/ci.go install ./cmd/geth
+	@echo "Done building."
+	@echo "Run \"$$(GORUN) build/ci.go install ./cmd/geth
+	@echo "Done building."
+	@echo "Run \"$$(GORUN) build/ci.go install ./cmd/geth
+	@echo "Done building."
+	@echo "Run \"$
 geth:
 	$(GORUN) build/ci.go install ./cmd/geth
 	@echo "Done building."
